@@ -1,10 +1,9 @@
-import { Button } from '@/shared/components/ui/button';
-import { Input } from '@/shared/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
     return (
         <main>
-            <Input value="test" />
+            <Button variant="default">test</Button>
         </main>
     );
 }
