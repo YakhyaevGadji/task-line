@@ -1,9 +1,5 @@
-import { Button } from '@/components/ui/button';
+import Auth from '@/app/auth/page';
 
 export default function Home() {
-    return (
-        <main>
-            <Button variant="default">test</Button>
-        </main>
-    );
+    return <main>Home</main>;
 }
