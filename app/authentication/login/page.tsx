@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthUser from '@/views/auth/ui/auth-user';
 
-const Auth = () => {
+const LoginUser: React.FC = () => {
     return (
         <div>
             <AuthUser />
@@ -9,4 +9,4 @@ const Auth = () => {
     );
 };
 
-export default Auth;
+export default LoginUser;
