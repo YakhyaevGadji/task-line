@@ -16,7 +16,7 @@ const RegisterUser: React.FC = () => {
                 />
                 <Input
                     className="bg-[#F3F4F6] p-5 mb-4 rounded"
-                    placeholder="LastName"
+                    placeholder="Surname"
                 />
             </div>
             <Input
@@ -31,7 +31,7 @@ const RegisterUser: React.FC = () => {
                 className="bg-[#F3F4F6] p-5 mb-4 rounded"
                 placeholder="Password"
             />
-            <Button className="flex mx-auto p-5 mb-4 rounded"> Register</Button>
+            <Button className="flex mx-auto p-5 mb-4 rounded">Register</Button>
             <p className="text-center text-[12px]">
                 Already have an account?
                 <Link
