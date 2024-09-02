@@ -1,9 +1,8 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
-import { Title } from '@/shared/ui/title';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Title } from '@/shared';
 
 const RegisterUser: React.FC = () => {
     return (
