@@ -1,22 +1,17 @@
-'use client';
-
-import React from 'react';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
 interface Props {
     className?: string;
 }
 
-const Container: React.FC<React.PropsWithChildren<Props>> = ({
+export const Container: React.FC<React.PropsWithChildren<Props>> = ({
     className,
     children,
 }) => {
-    console.log('test');
     return (
-        <div className={cn('mx-auto max-w-[1280px] p-20', className)}>
+        <div className={cn('mx-auto max-w-[1280px]', className)}>
             {children}
         </div>
     );
 };
-
-export default Container;
