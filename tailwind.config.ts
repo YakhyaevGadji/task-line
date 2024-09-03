@@ -9,6 +9,7 @@ const config: Config = {
         './shared/**/*.{js,ts,jsx,tsx,mdx}',
         './views/**/*.{js,ts,jsx,tsx,mdx}',
         './features/**/*.{js,ts,jsx,tsx,mdx}',
+        './entities/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
         extend: {

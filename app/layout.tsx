@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
+import { ProviderRedux } from './provider/provider-redux';
 
 const sans = DM_Sans({
     subsets: ['latin'],
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={sans.className}>{children}</body>
+            <body className={sans.className}>
+                <ProviderRedux>{children}</ProviderRedux>
+            </body>
         </html>
     );
 }
