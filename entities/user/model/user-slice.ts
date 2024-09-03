@@ -1,14 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { IState } from './api.types';
 import { fetchAuth, fetchRegister } from '../api/api';
 
-const initialState = {
-    user: {
-        login: '',
-        email: '',
-        password: '',
-    },
-    isLogged: false,
-};
+const initialState = {} as IState;
 
 export const userSlice = createSlice({
     name: 'user',
@@ -18,7 +12,7 @@ export const userSlice = createSlice({
     },
     extraReducers(builder) {
         builder.addCase(fetchRegister.fulfilled, (state, action) => {
-            state.user = action.payload;
+            state.userData = action.payload;
             state.isLogged = true;
         });
         builder.addCase(fetchRegister.pending, (state) => {
@@ -28,7 +22,7 @@ export const userSlice = createSlice({
             state.isLogged = false;
         });
         builder.addCase(fetchAuth.fulfilled, (state, action) => {
-            state.user = action.payload;
+            state.userData = action.payload;
             state.isLogged = true;
         });
         builder.addCase(fetchAuth.pending, (state) => {

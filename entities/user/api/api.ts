@@ -12,8 +12,8 @@ export const fetchRegister = createAsyncThunk(
     'user/fetchRegister',
     async (data: any, { rejectWithValue }) => {
         try {
-            const user = await axios.post('/register', data);
-            console.log(user);
+            const user = await instance.post('/register', data);
+
             return user.data;
         } catch (error: any) {
             if (error.message && error.data.message) {

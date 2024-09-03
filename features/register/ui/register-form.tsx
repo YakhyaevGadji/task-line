@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -10,6 +11,7 @@ import RegisterSchema from '../model/register-form.schema';
 import { FormData } from '../model/register-form.types';
 import { useAppDispatch } from '@/shared/hook/hook';
 import { fetchRegister } from '@/entities/user/api/api';
+
 const RegisterUser: React.FC = () => {
     const {
         register,
@@ -19,8 +21,8 @@ const RegisterUser: React.FC = () => {
         resolver: yupResolver(RegisterSchema),
     });
     const dispatch = useAppDispatch();
-    const onSubmit = handleSubmit((data) => {
-        dispatch(fetchRegister(data));
+    const onSubmit = handleSubmit(async (data) => {
+        await dispatch(fetchRegister(data));
     });
 
     return (
