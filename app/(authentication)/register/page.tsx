@@ -6,7 +6,7 @@ import { Title } from '@/shared';
 
 const RegisterUser: React.FC = () => {
     return (
-        <div className="mt-40 mx-auto w-[720px] shadow-xl rounded-md bg-white px-[140px] py-[90px]">
+        <>
             <Title className="font-semibold mb-4" text="Register" size="lg" />
             <div className="flex gap-3">
                 <Input
@@ -33,14 +33,11 @@ const RegisterUser: React.FC = () => {
             <Button className="flex mx-auto p-5 mb-4 rounded">Register</Button>
             <p className="text-center text-[12px]">
                 Already have an account?
-                <Link
-                    className="text-slate-600 pl-1"
-                    href="/authentication/login"
-                >
+                <Link className="text-slate-600 pl-1" href="/login">
                     Sign in here.
                 </Link>
             </p>
-        </div>
+        </>
     );
 };
 
