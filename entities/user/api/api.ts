@@ -1,14 +1,12 @@
 'use client';
+import instance from '@/shared/axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-// First, create the thunk
+
 export const fetchRegister = createAsyncThunk(
     'user/fetchRegister',
     async (data: any, { rejectWithValue }) => {
         try {
-            console.log(data);
-            const user = await axios.post('/register', data);
-            console.log(user);
+            const user = await instance.post('/register', data);
 
             return user.data;
         } catch (error: any) {

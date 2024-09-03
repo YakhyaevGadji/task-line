@@ -19,8 +19,8 @@ const RegisterUser: React.FC = () => {
         resolver: yupResolver(RegisterSchema),
     });
     const dispatch = useAppDispatch();
-    const onSubmit = handleSubmit((data) => {
-        dispatch(fetchRegister(data));
+    const onSubmit = handleSubmit(async (data) => {
+        await dispatch(fetchRegister(data));
     });
 
     return (
