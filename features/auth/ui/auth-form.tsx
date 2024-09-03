@@ -7,6 +7,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useAppDispatch } from '@/shared/hook/hook';
+import { fetchAuth } from '@/entities/user/api/api';
 
 type Inputs = {
     login: string;
@@ -15,9 +17,10 @@ type Inputs = {
 
 const AuthForm = () => {
     const { register, handleSubmit } = useForm<Inputs>();
+    const dispatch = useAppDispatch();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        dispatch(fetchAuth(data));
     };
 
     return (

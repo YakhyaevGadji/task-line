@@ -1,10 +1,10 @@
 import React from 'react';
-import AuthUser from '@/views/auth/ui/auth-user';
+import AuthForm from '@/features/auth/ui/auth-form';
 
 const Auth = () => {
     return (
         <div>
-            <AuthUser />
+            <AuthForm />
         </div>
     );
 };

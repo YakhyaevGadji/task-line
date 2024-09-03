@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchRegister } from '../api/api';
+import { fetchAuth, fetchRegister } from '../api/api';
 
 const initialState = {
     user: {
@@ -25,6 +25,16 @@ export const userSlice = createSlice({
             state.isLogged = false;
         });
         builder.addCase(fetchRegister.rejected, (state) => {
+            state.isLogged = false;
+        });
+        builder.addCase(fetchAuth.fulfilled, (state, action) => {
+            state.user = action.payload;
+            state.isLogged = true;
+        });
+        builder.addCase(fetchAuth.pending, (state) => {
+            state.isLogged = false;
+        });
+        builder.addCase(fetchAuth.rejected, (state) => {
             state.isLogged = false;
         });
     },
